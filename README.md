@@ -1,3 +1,5 @@
+# Software Methodology CS213
+Rutgers University Professor Sesh Venugopal
 
 There is no required/recommended text for this course. Lecture notes and references to online content will be posted on this site.  
   
