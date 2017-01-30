@@ -4,7 +4,7 @@ The course provides an overview of the fundamental concepts and current trends i
 1\. Introduction\
 The problem of introducing intelligence in machines is arguably one of the greatest problems in Science. Today's AI neural nets use computational models and algorithms inspired by the knowledge of the brain in the '90s. Powerful as they are, AI technologies such as Watson and Siri, are impressive but their domain specificity and reliance on vast numbers of labeled examples are obvious limitations. This course will extend the current knowledge on learning and inference, and how this can inform the development of new brain-inspired algorithms for intelligent computer vision and robotic control. The goal of this course is to help produce a community of CS students that could translate the current knowledge in Brain Science to intelligent algorithms in Computer Science.
 
-2\. Course Objectives
+### Course Objectives
 
 1\.     To explore how computation in the human brain can be effectively modeled across different levels of abstraction (from a single neuron to biological neural networks and systems)
 
@@ -12,7 +12,7 @@ The problem of introducing intelligence in machines is arguably one of the great
 
 3\.     To employ neuro-mimetic or neuro-inspired SNNs and tackle a CS problem in a term-wide project.
 
-3\. Learning Outcomes
+### Learning Outcomes
 
 The students are expected to:
 
@@ -26,7 +26,7 @@ The students are expected to:
 
 -         15th week [Final Paper] be capable of working productively with others as part of a team; be able to digest and use the feedback they get when the draft paper returns to them with comments written by the instructor; possess critical thinking skills, problem solving abilities, and familiarity with the computational skills, procedures as well as their limitations, which are essential to the field.
 
-3\. Course Structure
+### Course Structure
 
 -       24 lectures (1 h 20 min, each)
 
@@ -40,7 +40,7 @@ The students are expected to:
 
 -        Final term-paper
 
-4\. Grading Policy
+### Grading Policy
 
 -       2 assignments 20%
 
@@ -52,7 +52,7 @@ The students are expected to:
 
 -       Overall presence 10%
 
-5\. Course Syllabus\
+### Course Syllabus\
 Summary Lecture Plan (see below for a week by week breakdown):\
 [Weeks 01-03] Elements of Neuroscience: Biophysics of Brain Computation\
 [Weeks 04-07] Computational Modeling of Neurons as Spike Processing Machines\
@@ -116,7 +116,7 @@ Gerstner -- Chs. 19/20
 Ballard -- Chs. 9/10/11\
 Final Paper: Design and Development of a Spiking Neural Network to tackle a CS problem
 
-6\. Textbooks
+### Textbooks
 
 1.  Keith L. Downing "Intelligence Emerging: Adaptivity and Search in Evolving Neural Systems" MIT Press | May 2015
 2.  Peter Sterling and Simon Laughlin "Principles of Neural Design" MIT Press | March 2015
@@ -124,7 +124,7 @@ Final Paper: Design and Development of a Spiking Neural Network to tackle a CS p
 4.  Wulfram Gerstner, Werner M. Kistler, Richard Naud, Liam Paninski "Neuronal Dynamics: From Single Neurons to Networks and Models of Cognition" Cambridge University Press | September 2014
 5.  Daniel Rice "Calculus of Thought: Neuromorphic Logistic Regression in Cognitive Machines" Academic Press - Elsevier | October 2013
 
-7\. Academic Integrity
+### Academic Integrity
 
 Principles of academic integrity require that every Rutgers University student:
 
