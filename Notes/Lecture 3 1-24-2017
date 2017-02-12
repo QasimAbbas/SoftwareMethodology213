@@ -2,4 +2,32 @@
 ## Lecture 3
 ### 24 January, 2017
 
-###
+### Inheritance - Private Fields
+```java
+public class Point{
+  private int x,y;
+  ...
+}
+
+public class ColoredPoint extends Point{
+// x and y inherited HIDDEN
+  public int getX(){ //override inherited getX()
+    return x;
+  }
+}
+```
+* Will NOT compile becasue x is hidden(private)
+
+```java
+public class PointApp{
+  public static void main(String[] args){
+    ColoredPoint cp = new ColoredPoint(4,5,"blue");
+    System.out.println(cp.x) //Will NOT compile beacuse x is hidden
+    System.out.println(cp.getX()); //4
+  }
+}
+```
+* x id hidden
+* Inherited getX() method is able to access the x field
+
+### Inheritance - Static Members
