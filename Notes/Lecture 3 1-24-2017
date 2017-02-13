@@ -31,3 +31,27 @@ public class PointApp{
 * Inherited getX() method is able to access the x field
 
 ### Inheritance - Static Members
+* Static variable has been allocated statically so lifetime or "extent" extends across entire run of program
+
+```java
+public class Supercl{
+  static int x;
+  public static void m(){
+    System.out.println("in class Supercl");
+    
+  }
+}
+
+public class Subcl extends Supercl{}
+
+public class StaticTest{
+  public static void main(String[] args){
+    Supercl supercl = new Supercl();
+    System.out.println(supercl.x);
+    supercl.m(); //In subclass
+    Subcl subcl = new Subcl();
+    System.out.printn(subcl.x); //Inherited from Supercl
+    subcl.m(); "in class Supercl" - inherited from Supercl
+  }
+}
+```
