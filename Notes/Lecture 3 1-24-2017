@@ -55,3 +55,6 @@ public class StaticTest{
   }
 }
 ```
+
+* Inherited static fields are statically bound not dynamically
+
