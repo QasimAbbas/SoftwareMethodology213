@@ -1,0 +1,31 @@
+# Software Methodology
+## Lecture January 26, 2017
+### Static/Non-Static Mix: Another Example
+
+* Parsing a string into an integer e.g. "123" -> 123 //where to provide functionality
+
+OPTIONS:
+- Hava a **String** instance method say, parseAsInteger that returns int
+  
+  ```java
+  int i = "123".parseInteger();
+  ```
+  
+  * Bad design: Parsing an int is not inherent/characteristic property of Strinng -not all strings can be parsed as integers
+  
+- Have a **String** static method, say, parseAsInteger that returns int e.g.
+  
+  ```java
+  int i = String.parseAsInteger("123");
+  ```
+  
+- Have an **Integer** static method, say, parseInt that returns an int e.g.
+  
+  ```java
+  int i - Integer.parseInt("123");
+  ```
+  
+  * Of second and third, which choice is better?
+    * Intger.parseInt is better
+     * Think of all converting strings to doubles,floats also -- having all these types of converstions in **String** would require **String** to know about formats of other types, which is NOT its business. Best to localize functionality int the class(es) corresponding to the converted type.
+  
