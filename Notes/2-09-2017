@@ -1,0 +1,267 @@
+# Software Methodology
+## Lecture 9 February 2017
+
+### Interfaces
+* Properties of interfaces
+  * All fields in interface are implicitly **public, static, and final**
+  * When class implements interface, must implement every singe abstract method
+  * Interface may be generic
+  
+  
+### Using java.lang.Comparable
+
+```java
+public class Point implements Comparable<T>{
+  publc int compareTo(Point other){
+   int c = x = other.x;
+   if(c == 0){
+     c = y - other.y;
+   }
+   return c;
+  }
+ }
+
+
+public class Widget implements Comparable<Widget>{
+  publc int compareTo(Point other){
+    int c = x = other.x;
+    if(c == 0){
+      c = y - other.y;
+    }
+    return c;
+  }
+ }
+ 
+ //Two differnent compareTo implementations for 2 different data types to properly compareTo
+ 
+ public static <T extends Comparable<T>> boolean binarySearch(T[] list, T target){ // can pass in Point/Widget Type and will eval
+  ...
+  int c = target.compareTo(list[i])
+  ...
+  
+ }
+
+```
+
+### Interface javafx.event.Eventhandler
+
+```java
+public interface EventHandler<T extends Evemt>{
+  void handle(T event);
+}
+
+```
+
+### Using Interfaces
+
+*Key Points
+  * An interface introduces a new type
+  * By having a class implement an interface, a specific role can be attributed to it - role is defined by methods prescribed by interface
+  
+* A specifalized **role** needs to be specified for some classes in an application with a given **type** name
+  * Type name is the interface name
+    * role is set of interface methods
+* Interfacee is filter that is overlaid on class
+* Depending on context
+  * Class can be fully itself (class type)
+  * or can adopt a subset, specialized role (interface type)
+  
+  
+  ### Specialized Role For Classes
+  * mehtodM will impelemnt without knowing anything about the argument
+  * ebooks can both **play** and **store**
+    * playing and storing are two specialized roles
+    
+    ```java
+    public interface Playable{...}
+    public interface Storable{...}
+    ```
+    
+    ```java
+    class Ebkko implements Playable, Storable
+    
+    class Video impelemnts Playable, Storable
+    
+    ```
+ 
+### Using Interfaces: Front for Different Implementations
+   
+* Stack Structure
+   
+```java
+package util;
+    
+public class Stack<T>{
+  private ArrayList<T> items;
+  public class Stack{...}
+  public void push(T t){...}
+ }
+ ```
+ 
+ * Stack client
+ 
+ ```java
+ package apps;
+ import util.*
+ public class SomeApp{
+  ...
+  Stack<String> stk = new Stack<String>();
+  stk.push("stuff");
+  ...
+ }
+ ```
+  
+  * util gorup wants to provide alternative implementation using LinkedList.  Client needs to make appropriate changes
+  
+  ```java
+package util;
+    
+public class LLStack<T>{
+  private Node<T> items;
+  public LLStack{...}
+  public void llpush(T t){...}
+ }
+ ```
+ 
+ * Stack client
+ 
+ ```java
+ package apps;
+ import util.*
+ public class SomeApp{
+  ...
+  LLStack<String> stk = new LLStack<String>();
+  stk.llpush("stuff");
+  ...
+ }
+ ```
+ 
+ * To swtich b/w alternatives, many changes have to be made
+ 
+ ### Stack Alternatives
+
+* Stack Interface
+
+```java
+package util;
+
+public interface Stack<T>{
+  void push(T t);
+  T pop();
+  ...
+} 
+```
+
+* ArrayList version
+
+```
+package util;
+
+public class ALStack<T> implements Stack<T>{
+  private ArrayList<T> items;
+  public ALStack(){...}
+  public void push(T t){...}
+  public T pop(){...}
+}
+```
+
+* Linked List version
+
+```
+package util;
+
+public class ALStack<T> implements Stack<T>{
+  private Nodet<T> items;
+  public LLStack(){...}
+  public void push(T t){...}
+  public T pop(){...}
+}
+```
+    
+* Stack Client
+
+```java
+package apps;
+
+public class SomeApp{
+...
+StackString> stk = new ALStack<String>();
+stk.push("stuff");
+}
+```
+
+* User interface Stack for static type
+* To use other stack only one change - in new
+
+```java
+package apps;
+
+public class SomeApp{
+  ...
+  Stack<String> stk = new LLStack<Stirng>()
+  stk.push("stuff");
+  ...
+}
+```
+
+* In an application that does stuff with lists, there is a choice of what kind of list to use
+
+Arraylist used, statically typed to ArrayList:
+
+```java
+ArrayList list = new ArrayList();
+...
+list.<ArrayList method>(...)
+```
+
+OR
+
+```java
+List list = new ArrayList();
+...
+list.<List method>(...)
+...
+```
+
+* Consider later switching to a different impelmentatino of list, say linked list
+
+### Using Interfaces: As a workaround for multiple Inheritance
+* Class cannot extend more than one class
+* Workaround is definiting one of the types an an interface
+
+```java
+public class Phone{
+  public void makeCall(...){...}
+  public void addContact(...){...}
+}
+```
+   
+```java
+public class MusicPlayer{
+  public Tune getTune(...){...}
+  public void playTune(...){...}
+  
+}
+```
+   
+```java
+public interface MusicPlayer{
+  Tune getTuner(...);
+  void Plauer(..);
+}
+```
+
+```java
+public class SmartPHone extends Phone implements MusicPlayer{
+  public void make Call(...){...}
+  public void addContact(...){...}
+  public Tune getTune(...){...}
+  public void playTune(...){...}
+  ...
+}
+```
+
+### Some uses of Interfaces
+* Polymorphism
+  * Dependign on run time object, Point or ColoredPoint the appropriate toString method is called
+    * Different "shape" at run time
