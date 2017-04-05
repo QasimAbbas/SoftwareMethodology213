@@ -1,0 +1,17 @@
+# UML Class Diagram III
+## Lecture 3 March 2017
+### Unidirectional Association
+* OverdrawnAccounts knows about BankAccount, but does not about OverdrawnAccounts -> in the implementation OverdrawnAccounts would have a list of BankAccount instances, but BankAccount would not refer back to OverDrawnAccounts
+
+### Bidirectional Association and Navigabitlity 
+* Flight *knows about* Plane, and Plane *knows about* Flight.  When implemented, it will be easy to know which Plane is assigned to a Flight, and which FLights a Plane has been assigned to.
+* It is possible to navigated from Flight to Plane and vice versa
+
+### Dependency
+* Class A depends on Class B.  If A uses B in such a way that a change in B will effect A
+  * Book depends on Promotion
+    * Changing promotion would affect Book
+  * Say A depends on B 
+    * B would appear as a parameter, return type, or local variable in a method of A
+  * Dependency are the weakest kind of relationships, and the "dependee" class is subordinate to the "depender/dependet" class
+  
